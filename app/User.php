@@ -32,4 +32,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Task::class);
     }
+
+    public function files()
+    {
+        return $this->hasMany(File::class);
+    }
+
 }

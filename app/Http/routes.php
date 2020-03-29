@@ -32,6 +32,12 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/task', 'TaskController@store');
     Route::delete('/task/{task}', 'TaskController@destroy');
 
+    Route::get('files', 'FileController@files')->name('files');
+    ##
+    Route::post('/file', 'FileController@store')->name('file.store');
+    #Route::post('files', 'FileController@fileUploadPost')->name('file.upload.post');
+    Route::delete('/file/{file}', 'FileController@destroy')->name('file.destroy');
+
     Route::auth();
 
 });
